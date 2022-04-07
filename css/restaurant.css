@@ -1,0 +1,43 @@
+body,
+.col,
+img,
+div {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "PT Serif", serif;
+}
+
+.spacing {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.my-padding {
+  padding-top: 5vh;
+  padding-bottom: 3vh;
+}
+
+li {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  list-style-type: none;
+  font-size: 13px;
+}
+
+li h5 {
+  font-family: "Courier New", monospace;
+}
+
+.form-control {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid black;
+  line-height: 33px;
+}
+
+.btn {
+  border-radius: 0;
+}
