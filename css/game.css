@@ -1,0 +1,21 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    overflow: hidden;
+    background-image: linear-gradient(#07043a, #040438, #030218, #000000);
+}
+
+button {
+    width: 70px;
+    padding: 5px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+li {
+    list-style-type: none;
+}
