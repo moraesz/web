@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinícius - Calculadora</title>
+    <link rel="icon" href="favicon_io circle/favicon.ico">
+</head>
+
+<body>
+
+
+    <div>
+        <input type="number" id="x"><br>
+        <input type="number" id="y"><br>
+        <label id="resultado">Resultado</label>
+
+        <br>
+
+        <button onclick="adicao">+</button>
+        <button onclick="subtracao">-</button>
+        <button onclick="multiplicacao">x</button>
+        <button onclick="divisao">/</button>
+    </div>
+
+    <script>
+        var a = document.getElementById("x").value;
+        var b = document.getElementById("y").value;
+        var res;
+        a = parseInt(a);
+        console.log(typeof a);
+        console.log(a + a);
+
+
+        function name(params) {
+
+        }
+
+        function adicao(a, b) {
+            res = a + a;
+            console.log(res);
+
+        }
+        function subtracao(a, b) {
+            return a - b;
+        }
+        function multiplicacao(a, b) {
+            return a * b;
+        }
+        function divisao(a, b) {
+            return a / b;
+        }
+    </script>
+
+</body>
+
+</html>
