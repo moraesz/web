@@ -5,7 +5,7 @@
 			document.getElementById("nome").innerHTML = nome;
 		} */
 
-var nome = "Vinícius";
+var nome = "Jogador";
 
 var points1 = 0,
   points2 = 0;
