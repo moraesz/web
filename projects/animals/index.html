@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animais Fantásticos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC" rel="stylesheet">
+    <script>document.documentElement.className += ' js';</script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -15,22 +16,31 @@
             <li><a href="#animais">Animais</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contato">Origamid</a></li>
-            <li><a href="https://moraesz.github.io/web/">Dev</a></li>
+            <li><a href="https://www.google.com.br">Dev</a></li>
         </ul>
     </nav>
     <section class="grid-section animais" id="animais">
         <h1 class="titulo">Animais Fantásticos</h1>
-        <ul class="animais-lista">
+        <ul class="animais-lista js-tabmenu">
             <li>
                 <img src="img/imagem1.jpg" alt="raposa">
-                <img src="img/imagem2.jpg" alt="esquilo">
+            </li>
+            <li><img src="img/imagem2.jpg" alt="esquilo"></li>
+            <li>
                 <img src="img/imagem3.jpg" alt="urso">
+            </li>
+            <li>
                 <img src="img/imagem4.jpg" alt="lobo">
+            </li>
+            <li>
                 <img src="img/imagem5.jpg" alt="macaco">
+            </li>
+            <li>
                 <img src="img/imagem6.jpg" alt="leao">
             </li>
+
         </ul>
-        <div class="animais-descricao">
+        <div class="animais-descricao js-tabcontent">
             <section>
                 <h2>Raposa</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ad ipsam quaerat incidunt enim, numquam cum aliquam. Sit officia, ullam harum at non repudiandae voluptates.</p>
@@ -83,19 +93,19 @@
             <img src="img/mapa.png" alt="mapa">
         </div>
         <ul>
-            <li>contato@email.com</li>
+            <li>vinicius.dmoraes@outlook.com</li>
             <li>(12) 9999-9999</li>
             <li>Rua Exemplo de Rua, Nº 10</li>
             <li>São Paulo - SP</li>
         </ul>
 
         <footer class="copy">
-            <p>Todos os direitos reservados.</p>
+            <p>Proudly created by me.</p>
         </footer>
     </section>
 
 
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
