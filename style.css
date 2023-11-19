@@ -1,0 +1,32 @@
+body {
+    background-color: #1f2120 !important;
+    color: #fff !important;
+}
+nav {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.38em;
+}
+h1 {
+    font-family: 'Lalezar', cursive;
+    font-size: 2.8em;
+}
+h2{
+    font-family: 'Bebas Neue', cursive;
+    text-transform: uppercase;
+    color: #2b8772;
+    font-weight: bold;
+}
+li{
+    list-style: none;
+    color: #fff;
+    display: inline;
+}
+a{
+    text-decoration: none !important;
+}
+.grid-container{
+    display: -ms-inline-grid;
+}
+section{
+    padding: 5rem 0;    
+}
