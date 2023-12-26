@@ -1,32 +1,56 @@
-body {
-    background-color: #1f2120 !important;
-    color: #fff !important;
+body, h1, h2, ul, li, p{
+    margin: 0;
+    padding: 0;
 }
-nav {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.38em;
-}
-h1 {
-    font-family: 'Lalezar', cursive;
-    font-size: 2.8em;
-}
-h2{
-    font-family: 'Bebas Neue', cursive;
-    text-transform: uppercase;
-    color: #2b8772;
-    font-weight: bold;
+
+img{
+    display: block;
+    max-width: 100%;
 }
 li{
     list-style: none;
-    color: #fff;
-    display: inline;
 }
 a{
-    text-decoration: none !important;
+    text-decoration: none;
 }
-.grid-container{
-    display: -ms-inline-grid;
+
+body{
+    background-color: #1f2120;
+    color: #fff;
+    display: grid;
+    /* grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr; */
+    grid-template-columns: 20% 20% 20% 20% 20% ;
 }
-section{
-    padding: 5rem 0;    
+.menu{
+    grid-column: 3/5;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.menu ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.menu li a{
+    display: block;
+    padding: 15px;
+    margin-right: 10px; 
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: .875rem;
+    letter-spacing: .1rem;
+}
+
+.grid-section{
+    grid-column: 2/4;
+}
+
+.home, .projetos, .contato{
+    grid-column: 2/5;
+}
+footer{
+    grid-column: 2/4;
 }
