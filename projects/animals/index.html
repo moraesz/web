@@ -16,7 +16,8 @@
 <body>
     <div class="grid-container">
         <nav class="menu" data-menu="suave">
-            <ul>
+            <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
+            <ul data-menu="list" id="menu">
                 <li><a href="#animais">Animais</a></li>
                 <li data-dropdown>
                     <a href="sobre.html">Sobre</a>
@@ -39,19 +40,19 @@
                     <img src="img/imagem1.jpg" alt="Raposa">
                 </li>
                 <li>
-                    <img src="img/imagem2.jpg">
+                    <img src="img/imagem2.jpg" alt="Esquilo">
                 </li>
                 <li>
-                    <img src="img/imagem3.jpg">
+                    <img src="img/imagem3.jpg" alt="Urso">
                 </li>
                 <li>
-                    <img src="img/imagem4.jpg">
+                    <img src="img/imagem4.jpg" alt="Lobo">
                 </li>
                 <li>
-                    <img src="img/imagem5.jpg">
+                    <img src="img/imagem5.jpg" alt="Macaco">
                 </li>
                 <li>
-                    <img src="img/imagem6.jpg">
+                    <img src="img/imagem6.jpg" alt="Leão">
                 </li>
             </ul>
             <div class="animais-descricao" data-tab="content">
@@ -118,21 +119,54 @@
             </dl>
         </section>
 
+        <section class="grid-section numeros" data-anime="scroll">
+            <h1 class="titulo">Números</h1>
+            <div class="numeros-grid">
+
+                <div class="numero-animal">
+                    <h3>Raposa</h3>
+                    <span data-numero="">8474</span>
+                </div>
+                <div class="numero-animal">
+                    <h3>Esquilo</h3>
+                    <span data-numero="">8954</span>
+                </div>
+                <div class="numero-animal">
+                    <h3>Urso</h3>
+                    <span data-numero="">9654</span>
+                </div>
+                <div class="numero-animal">
+                    <h3>Lobo</h3>
+                    <span data-numero="">21444</span>
+                </div>
+                <div class="numero-animal">
+                    <h3>Macaco</h3>
+                    <span data-numero="">54545</span>
+                </div>
+                <div class="numero-animal">
+                    <h3>Leão</h3>
+                    <span data-numero="">20540</span>
+                </div>
+            </div>
+        </section>
+
+
         <section class="grid-section contato" data-anime="scroll" id="contato">
             <h1 class="titulo">Contato</h1>
             <div class="mapa" data-tooltip="" aria-label="Endereço próximo ao estacionamento.">
                 <img src="img/mapa.png">
             </div>
             <ul class="dados">
-                <li>vinicius@email.com</li>
-                <li>+55 (12) 9999-9999</li>
+                <li>contato@email.com</li>
+                <li>+55 (55) 9999-9999</li>
                 <li>Rua do Conde, nº 21</li>
                 <li>São Paulo - SP</li>
+                <li data-semana="1,2,3,4,5" data-horario="8,18">Seg à Sex das 08h às 18h</li>
             </ul>
         </section>
 
         <footer class="copy">
-            <p>Todos os direitos reservados.</p>
+            <p>Todos os direitos reservados. (2023-<span id="ano"></span>).</p>
         </footer>
     </div>
 
@@ -151,6 +185,11 @@
 
     <!-- <script src="aula.js"></script> -->
     <script type="module" src="./js/script.js"></script>
+    <script>
+        const ano = document.getElementById('ano');
+        const novoAno = new Date().getFullYear();
+        ano.innerText = novoAno;        
+    </script>
 </body>
 
 </html>
