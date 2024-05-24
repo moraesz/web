@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>Jogador:<span class="jogador"></span></p>
+        <p>Computador:<span class="computador"></span></p>
+        <h2>Rodada: <span class="rodada"></span></h2>
+        <button class="btn pedra">Pedra</button>
+        <button class="btn papel">Papel</button>
+        <button class="btn tesoura">Tesoura</button>
+    </div>
+
+    <script>
+        const jogador = document.querySelector('.jogador');
+        const computador = document.querySelector('.computador');
+        const botoes = document.querySelectorAll('.btn')
+        const opcoesJogadas = ['pedra', 'papel', 'tesoura'];
+
+        function jogadaJogador() {
+            botoes.forEach(botao => {
+                botao.addEventListener('click', () => {
+                    botao.getAttribute(class);
+                })
+            })
+        }
+
+    </script>
+
+
+</body>
+
+</html>
