@@ -1,6 +1,6 @@
 const jogador = document.querySelector('.jogador');
 const computador = document.querySelector('.computador');
-const botoes = document.querySelectorAll('.main button');
+const botoes = document.querySelectorAll('button');
 const resultado = document.querySelector('.resultado');
 const pontosJogador = document.querySelector('.pontos-jogador');
 const pontosComputador = document.querySelector('.pontos-computador');
@@ -63,10 +63,7 @@ let pComputador = 0;
 function contadorPontos() {
   botoes.forEach((botao) => {
     botao.addEventListener('click', () => {
-      if (
-        pontosJogador.innerHTML === '7' ||
-        pontosComputador.innerHTML === '7'
-      ) {
+      if (+pontosJogador.innerHTML === 7 || +pontosComputador.innerHTML === 7) {
         pontosJogador.innerHTML = 0;
         pontosComputador.innerHTML = 0;
       }
@@ -84,11 +81,11 @@ function contadorPontos() {
 function fimJogo() {
   botoes.forEach((botao) => {
     botao.addEventListener('click', () => {
-      //   if (+pontosJogador.innerHTML === 7 || +pontosComputador.innerHTML === 7) {
-      //     pJogador = 0;
-      //     pComputador = 0;
-      //     let mensagemFinal = 'Fim de jogo!';
-      //   }
+      if (+pontosJogador.innerHTML === 7 || +pontosComputador.innerHTML === 7) {
+        pJogador = 0;
+        pComputador = 0;
+        let mensagemFinal = 'Fim de jogo!';
+      }
       if (+pontosJogador.innerHTML === 7) {
         alert((mensagemFinal += '\nJogador é o vencedor!!'));
       } else if (+pontosComputador.innerHTML === 7) {
@@ -104,7 +101,7 @@ function rodarJogo() {
   validarJogadas();
   compararJogadas();
   contadorPontos();
-  //   fimJogo();
+  fimJogo();
 }
 
 rodarJogo();
