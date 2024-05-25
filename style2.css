@@ -1,0 +1,54 @@
+body,
+h1,
+h2,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    background-color: #1f2120;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
+}
+
+h2 {
+    color: #2b8772;
+    text-transform: uppercase;
+}
+
+.menu {
+    grid-column: 2/4;
+}
+
+.menu li {
+    float: right;
+    display: inline;
+    list-style-type: none;
+    padding: 3px 5px;
+    text-transform: uppercase;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #2b8772;
+
+}
+
+section {
+    padding: 1.3em 0;
+    grid-column: 2/5;
+}
+
+.experiencia li {
+    display: inline;
+}
+
+.experiencia li img {
+    height: 300px;
+}

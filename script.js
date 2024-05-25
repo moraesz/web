@@ -85,11 +85,13 @@ function fimJogo() {
         pJogador = 0;
         pComputador = 0;
         let mensagemFinal = 'Fim de jogo!';
-      }
-      if (+pontosJogador.innerHTML === 7) {
-        alert((mensagemFinal += '\nJogador é o vencedor!!'));
-      } else if (+pontosComputador.innerHTML === 7) {
-        alert((mensagemFinal += '\nComputador é o vencedor!!'));
+        if (+pontosJogador.innerHTML === 7) {
+          pontosJogador.innerHTML = 7;
+          alert((mensagemFinal += '\nJogador é o vencedor!!'));
+        } else if (+pontosComputador.innerHTML === 7) {
+          pontosComputador.innerHTML = 7;
+          alert((mensagemFinal += '\nComputador é o vencedor!!'));
+        }
       }
     });
   });
