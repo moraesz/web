@@ -11,7 +11,8 @@
     <div class="main">
         <p>Jogador jogou: <span class="jogador"> aguardando</span>.</p>
         <p>Computador jogou: <span class="computador">aguardando..</span>.</p>
-        <h2>Rodada: <span class="rodada"></span></h2>
+        <h2>Resultado: <span class="resultado"></span></h2>
+        <p>Rodada: <span class="rodada"></span></p>
         <button class="pedra">Pedra</button>
         <button class="papel">Papel</button>
         <button class="tesoura">Tesoura</button>
@@ -20,7 +21,8 @@
     <script>
         const jogador = document.querySelector('.jogador');
         const computador = document.querySelector('.computador');
-        const botoes = document.querySelectorAll('.main button')
+        const botoes = document.querySelectorAll('.main button');
+        const resultado = document.querySelector('.resultado');
         const opcoesJogadas = ['pedra', 'papel', 'tesoura'];
 
         function jogadaJogador() {
@@ -40,10 +42,39 @@
             })
         }
 
+        let j = '';
+        let c = '';
+        function validarJogadas() {
+            botoes.forEach((botao) => {
+                botao.addEventListener('click', () => {
+                    j = jogador.innerHTML;
+                    c = computador.innerHTML;
+                })
+            })
+        }
+
+        function compararJogadas() {
+            botoes.forEach(botao => {
+                botao.addEventListener('click', () => {
+                    let res = ''
+                    if (j === c) {
+                        res = 'empate';
+                    } else if (j === 'pedra' && c === 'tesoura' || j === 'papel' && c === 'pedra' || j === 'tesoura' && c === 'papel') {
+                        res = 'jogador venceu';
+                    } else if (c === 'pedra' && j === 'tesoura' || c === 'papel' && j === 'pedra' || c === 'tesoura' && j === 'papel') {
+                        res = 'computador venceu';
+                    }
+                    return resultado.innerHTML = res;
+                })
+            })
+        }
+
 
         function rodarJogo() {
             jogadaJogador();
             jogadaComputador();
+            validarJogadas();
+            compararJogadas();
         }
 
         rodarJogo();
