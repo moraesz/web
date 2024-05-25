@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1f2120;
+    color: #fff;
+    height: 100vh;
+    /* color: #2b8772; */  
+}
+
+button {
+    min-width: 65px;
+    border-radius: 0px;
+    border: 1px solid fff;
+    background-color: #2b8772;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;  
+    align-items: center; 
+}
+.box{
+    min-width: 35em;
+    padding: 3em;
+    /* background-color: #000; */
+}
