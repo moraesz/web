@@ -1,13 +1,3 @@
-body, h1 {
-    margin: 0;
-    padding: 0;
-    color: #fff;
-}
-
-body{
-    background-color: #1f2120;    
-}
-
 h1{
     color: #2b8772; 
 }
@@ -31,6 +21,7 @@ h1{
     justify-content: center;  
     align-items: center; 
 }
+
 .main-box {
     min-width: 38em;
     padding: 3em;

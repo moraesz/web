@@ -1,19 +1,20 @@
-body,
-h1,
-h2,
-p {
+body, h1, h2, p {
     margin: 0;
     padding: 0;
 }
 
 body {
+    background-color: #1f2120;
+    color: #fff;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    background-color: #1f2120;
-    color: #fff;
     display: grid;
     grid-template-columns: 25vw 25vw 25vw 25vw;
+}
+
+h1{
+    color: #2b8772; 
 }
 
 h2 {
@@ -66,8 +67,10 @@ section {
 }
 
 @media (max-width: 700px){
+    .menu {
+        display: none;        
+    }
     .menu, .home, .experiencia, .contato {
-        background-color: blueviolet;
         grid-column: 1/4;
     }
     .home, .experiencia, .contato {
