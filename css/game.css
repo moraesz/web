@@ -31,13 +31,13 @@ h1{
     justify-content: center;  
     align-items: center; 
 }
-.main-box{
+.main-box {
     min-width: 38em;
     padding: 3em;
     background-color: #000;
 }
 
-.voltar a{
+.voltar a {
     text-decoration: none;
     color: #fff;
 }
