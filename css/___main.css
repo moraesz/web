@@ -1,0 +1,83 @@
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1f2120;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    display: grid;
+    grid-template-columns: 30vw 20vw 10vw 20vw 30vw;
+}
+
+h1{
+    color: #2b8772; 
+}
+
+h2 {
+    color: #2b8772;
+    text-transform: uppercase;
+}
+
+.menu {
+    grid-column: 4/5;
+}
+
+.menu li {
+    float: right;
+    display: inline;
+    list-style-type: none;
+    padding: 11px 21px;
+    text-transform: uppercase;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #2b8772;
+    font-weight: bold;
+}
+
+section {
+    padding: 1.3em 0;
+}
+
+.home {
+    grid-column: 4/5;
+}
+
+.experiencia {
+    grid-column: 4/4;    
+}
+
+.experiencia li {
+    align-items: center;
+    display: inline;
+}
+
+.experiencia li img {
+    height: 300px;
+}
+
+.contato {
+    grid-column: 2/4;
+}
+
+@media (max-width: 700px){
+    .menu {
+        display: none;        
+    }
+    .menu, .home, .experiencia, .contato {
+        grid-column: 1/4;
+    }
+    .home, .experiencia, .contato {
+        padding: 15px 21px;
+    }
+    .menu li {
+        float: none;
+        display: block;
+        margin: 0;
+    }
+}
