@@ -1,6 +1,11 @@
 body, section, nav, div, h1, p, ul, li{
     margin: 0;
     padding: 0;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
 }
 
 body{
@@ -10,8 +15,19 @@ body{
 
 .grid-container {
   display: grid;
-  /* grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr; */
   grid-template-columns: 27% auto 27%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 230px 230px 230px;  
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid white;
+  grid-gap: 10px;
 }
 
 .menu, .sobre, .experiencia, .contato, .direitos {
@@ -20,10 +36,27 @@ body{
 
 h1 {
   padding: 1em 0 1em 0;
-  color: #2b8772;
+  color: #2b8772; 
+  font-weight: bold;
+  /* font-size: 1.7em; */
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
 }
+
 a {
   text-decoration: none;
+  color: #fff;
+}
+
+.menu a{
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: #2b8772;
+  transition: 1s;
 }
 
 li {
@@ -42,16 +75,16 @@ section {
   margin-top: 4.7em;
 }
 
-.experiencia img {
-  max-width: 180px !important;  
+.about {
+  padding: 0 2.5em;
+  /* text-align: justify; */
+  font-style: italic;
 }
 
-.experiencia li {
-  list-style-type: none;
-  display: inline;  
+.direitos div{
+  text-align: center; 
+  margin: 25px 0 25px 0;
 }
-
-
 
 @media (max-width: 700px) {
   .grid-container {
@@ -62,9 +95,12 @@ section {
   }
   .menu, .sobre, .experiencia, .contato, .direitos {
     grid-column: 1/1;
-    padding: 0;
-    margin: 0;
-  } 
+    margin: 1em 2em;
+    
+  }
+  h1{
+    text-align: center;
+  }
 }
 
 
