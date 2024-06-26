@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo: Pedra, Papel e Tesoura</title>    
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-box">
+            <h1>Jogo: Pedra, Papel e Tesoura</h1>
+            <p>Jogador jogou: <span class="jogador"> aguardando</span>.</p>
+            <p>Computador jogou: <span class="computador">aguardando..</span>.</p>
+            <h2>Resultado: <span class="resultado">aguardando...</span></h2>
+            <h3>Jogador <span class="pontos-jogador">0</span> x <span class="pontos-computador">0</span> Computador</h3>
+            <button class="pedra">Pedra</button>
+            <button class="papel">Papel</button>
+            <button class="tesoura">Tesoura</button>                   
+        </div>
+    </div>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(to bottom right, #171716, #000);            
+        }
+        h1{
+            color: #2b8772; 
+        }
+
+        .main-box p, h2, h3{
+            color: #fff;
+        }
+
+        .main-box button {
+            min-width: 98px;
+            border-radius: 0px;
+            padding: 7px 4px;
+            border: 1px solid #000;
+            background-color: #2b8772;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;  
+            align-items: center;             
+        }
+
+        .main-box {
+            min-width: 38em;
+            padding: 3em;
+            background-color: #000;            
+        }
+
+        .voltar a {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+    <script>
+        const jogador = document.querySelector('.jogador');
+        const computador = document.querySelector('.computador');
+        const botoes = document.querySelectorAll('button');
+        const resultado = document.querySelector('.resultado');
+        const pontosJogador = document.querySelector('.pontos-jogador');
+        const pontosComputador = document.querySelector('.pontos-computador');
+        const opcoesJogadas = ['pedra', 'papel', 'tesoura'];
+
+        function jogadaJogador() {
+            botoes.forEach((botao) => {
+            botao.addEventListener('click', () => {
+                jogador.innerHTML = botao.getAttribute('class');
+            });
+            });
+        }
+
+        function jogadaComputador() {
+            botoes.forEach((botao) => {
+            botao.addEventListener('click', () => {
+                const x = Math.floor(Math.random() * (3 - 1 + 1) + 1);
+                computador.innerHTML = opcoesJogadas[x - 1];
+            });
+            });
+        }
+
+        let j = '';
+        let c = '';
+        function validarJogadas() {
+            botoes.forEach((botao) => {
+            botao.addEventListener('click', () => {
+                j = jogador.innerHTML;
+                c = computador.innerHTML;
+            });
+            });
+        }
+
+        function compararJogadas() {
+            botoes.forEach((botao) => {
+            botao.addEventListener('click', () => {
+                let res = '';
+                if (j === c) {
+                res = 'empate';
+                } else if (
+                (j === 'pedra' && c === 'tesoura') ||
+                (j === 'papel' && c === 'pedra') ||
+                (j === 'tesoura' && c === 'papel')
+                ) {
+                res = 'jogador venceu';
+                } else if (
+                (c === 'pedra' && j === 'tesoura') ||
+                (c === 'papel' && j === 'pedra') ||
+                (c === 'tesoura' && j === 'papel')
+                ) {
+                res = 'computador venceu';
+                }
+                resultado.innerHTML = res;
+            });
+            });
+        }
+
+        let pJogador = 0;
+        let pComputador = 0;
+        function contadorPontos() {
+            botoes.forEach((botao) => {
+                botao.addEventListener('click', () => {
+                    if (
+                    +pontosJogador.innerHTML === 7 ||
+                    +pontosComputador.innerHTML === 7
+                    ) {
+                    pontosJogador.innerHTML = 0;
+                    pontosComputador.innerHTML = 0;
+                    }
+                    if (resultado.innerHTML === 'jogador venceu') {
+                    pJogador += 1;
+                    } else if (resultado.innerHTML === 'computador venceu') {
+                    pComputador += 1;
+                    }
+                    pontosJogador.innerHTML = pJogador;
+                    pontosComputador.innerHTML = pComputador;
+                });
+            });
+        }
+
+        function fimJogo() {
+            botoes.forEach((botao) => {
+                botao.addEventListener('click', () => {
+                    if (
+                    +pontosJogador.innerHTML === 7 ||
+                    +pontosComputador.innerHTML === 7
+                    ) {
+                    pJogador = 0;
+                    pComputador = 0;
+                    let mensagemFinal = 'Fim de jogo!';
+                    if (+pontosJogador.innerHTML === 7) {
+                        pontosJogador.innerHTML = 7;
+                        alert((mensagemFinal += '\nJogador é o vencedor!!'));
+                    } else if (+pontosComputador.innerHTML === 7) {
+                        pontosComputador.innerHTML = 7;
+                        alert((mensagemFinal += '\nComputador é o vencedor!!'));
+                    }
+                    }
+                });
+            });
+        }
+
+        jogadaJogador();
+        jogadaComputador();
+        validarJogadas();
+        compararJogadas();
+        contadorPontos();
+        fimJogo();
+            
+    </script>
+</body>
+
+</html>

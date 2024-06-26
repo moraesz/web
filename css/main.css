@@ -27,7 +27,8 @@ body{
 
 .card {
   border: 1px solid white;
-  grid-gap: 10px;
+  grid-gap: 15px;
+  margin: 0 15px;
 }
 
 .menu, .sobre, .experiencia, .contato, .direitos {
@@ -96,16 +97,23 @@ section {
   .menu, .sobre, .experiencia, .contato, .direitos {
     grid-column: 1/1;
     margin: 1em 2em;
-    
   }
   h1{
     text-align: center;
   }
+  .cards {
+    display: grid;
+    grid-template-columns: 100%;  
+    margin: 0 auto;
+    justify-content: center;
+  }
+  
+  .card {
+    border: 1px solid white;
+    margin: 15px 0;      
+  }
+
+  .card img {
+    display: none;
+  }
 }
-
-
-
-
-
-
-
