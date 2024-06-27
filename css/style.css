@@ -1,1 +1,58 @@
-@import 'main.css';
+body, .bg-dark{  
+  background-color: #1f2120 !important;
+  color: #fff;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;  
+}
+.bg-black {
+  background-color: #000;
+}
+.nav{
+  font-weight: bold;
+  padding: 14px .8rem;  
+}
+.container-fluid {
+  border-bottom: #242222 4px solid;
+}
+section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+h1, h2, h5{
+  color: #2b8772;
+  font-weight: bold;
+}
+h1 {
+  margin-bottom: 2.3rem;
+}
+
+li{
+ list-style-type: none;
+ cursor: pointer;
+}
+
+a{
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+a:hover{
+  color: #2b8772;  
+}
+
+.btn-primary {
+  border: 1px solid #2b8772;
+  background-color: #2b8772;
+}
+.btn-primary:hover {
+  border: 1px solid green;
+  background-color: #2b8772;
+}
+.card {
+  margin: 10px 10px;
+}
+
+
