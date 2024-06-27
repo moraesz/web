@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo: Pedra, Papel e Tesoura</title>    
+    <link rel="shortcut icon" href="./img/icon1.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <title>Pedra, Papel ou Tesoura? Clique no botão e faça a sua jogada!</title>    
 </head>
 
 <body>
@@ -15,61 +19,59 @@
             <p>Computador jogou: <span class="computador">aguardando..</span>.</p>
             <h2>Resultado: <span class="resultado">aguardando...</span></h2>
             <h3>Jogador <span class="pontos-jogador">0</span> x <span class="pontos-computador">0</span> Computador</h3>
-            <button class="pedra">Pedra</button>
-            <button class="papel">Papel</button>
-            <button class="tesoura">Tesoura</button>    
-            <a href="/index.html" class="voltar">Voltar</a>               
+            <button class="btn" id="pedra">Pedra</button>
+            <button class="btn" id="papel">Papel</button>
+            <button class="btn" id="tesoura">Tesoura</button>
+            <button><a href="./index.html">Voltar</a></button>          
         </div>
     </div>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: linear-gradient(to bottom right, #171716, #000);            
-        }
-        h1{
-            color: #2b8772; 
-        }
-
-        .main-box p, h2, h3{
-            color: #fff;
-        }
-
-        .main-box button {
-            min-width: 98px;
-            border-radius: 0px;
-            padding: 7px 4px;
-            border: 1px solid #000;
-            background-color: #2b8772;
-            color: #fff;
-        }
-
-        .container {
-            display: flex;
-            min-height: 100vh;
-            justify-content: center;  
-            align-items: center;             
-        }
-
-        .main-box {
-            min-width: 38em;
-            padding: 3em;
-            background-color: #000;            
-        }
-
-        .voltar {
-            text-decoration: none;            
-            padding: 7px 0 7px 0;
-            border: 1px solid #000;
-            background-color: #2b8772;
-            color: #fff;
-            width: 98px;            
-        }
+      body {
+          margin: 0;
+          padding: 0;
+          background-image: linear-gradient(to bottom right, #171716, #000);     
+          /* background-color: #1f2120; */
+          font-family: "Roboto Slab", serif;
+          font-optical-sizing: auto;
+          font-weight: 300;
+          font-style: normal;             
+      }
+      h1{
+          color: #2b8772; 
+      }
+      .main-box p, h2, h3{
+          color: #fff;
+      }
+      .main-box button {
+          min-width: 98px;
+          padding: 7px 4px;
+          border: 1px solid #000;
+          background-color: #2b8772;
+          color: #fff;
+          border-radius: 5px; 
+          font-weight: bold;         
+      }
+      .container {
+          display: flex;
+          min-height: 100vh;
+          justify-content: center;  
+          align-items: center;             
+      }
+      .main-box {
+          max-width: 38em;
+          padding: 1.3rem 7rem 3rem;
+          background-color: #000;            
+      }       
+      a {
+        text-decoration: none;
+        color: #fff;
+      }       
     </style>
     <script>
         const jogador = document.querySelector('.jogador');
         const computador = document.querySelector('.computador');
-        const botoes = document.querySelectorAll('button');
+        // const botoes = document.querySelectorAll('button');
+        const botoes = document.querySelectorAll('.btn');
         const resultado = document.querySelector('.resultado');
         const pontosJogador = document.querySelector('.pontos-jogador');
         const pontosComputador = document.querySelector('.pontos-computador');
@@ -78,107 +80,106 @@
         function jogadaJogador() {
             botoes.forEach((botao) => {
             botao.addEventListener('click', () => {
-                jogador.innerHTML = botao.getAttribute('class');
-            });
+                jogador.innerHTML = botao.getAttribute('id');
+                });
             });
         }
 
         function jogadaComputador() {
-            botoes.forEach((botao) => {
-            botao.addEventListener('click', () => {
-                const x = Math.floor(Math.random() * (3 - 1 + 1) + 1);
-                computador.innerHTML = opcoesJogadas[x - 1];
+          botoes.forEach((botao) => {
+          botao.addEventListener('click', () => {
+            const x = Math.floor(Math.random() * (3 - 1 + 1) + 1);
+            computador.innerHTML = opcoesJogadas[x - 1];
             });
-            });
+          });
         }
 
         let j = '';
         let c = '';
         function validarJogadas() {
-            botoes.forEach((botao) => {
-            botao.addEventListener('click', () => {
-                j = jogador.innerHTML;
-                c = computador.innerHTML;
+          botoes.forEach((botao) => {
+          botao.addEventListener('click', () => {
+            j = jogador.innerHTML;
+            c = computador.innerHTML;
             });
-            });
+          });
         }
 
         function compararJogadas() {
-            botoes.forEach((botao) => {
-            botao.addEventListener('click', () => {
-                let res = '';
-                if (j === c) {
-                res = 'empate';
-                } else if (
-                (j === 'pedra' && c === 'tesoura') ||
-                (j === 'papel' && c === 'pedra') ||
-                (j === 'tesoura' && c === 'papel')
-                ) {
-                res = 'jogador venceu';
-                } else if (
-                (c === 'pedra' && j === 'tesoura') ||
-                (c === 'papel' && j === 'pedra') ||
-                (c === 'tesoura' && j === 'papel')
-                ) {
-                res = 'computador venceu';
-                }
-                resultado.innerHTML = res;
+          botoes.forEach((botao) => {
+          botao.addEventListener('click', () => {
+              let res = '';
+              if (j === c) {
+              res = 'empate';
+              } else if (
+              (j === 'pedra' && c === 'tesoura') ||
+              (j === 'papel' && c === 'pedra') ||
+              (j === 'tesoura' && c === 'papel')
+              ) {
+              res = 'jogador venceu';
+              } else if (
+              (c === 'pedra' && j === 'tesoura') ||
+              (c === 'papel' && j === 'pedra') ||
+              (c === 'tesoura' && j === 'papel')
+              ) {
+              res = 'computador venceu';
+              }
+              resultado.innerHTML = res;
             });
-            });
+          });
         }
 
         let pJogador = 0;
         let pComputador = 0;
         function contadorPontos() {
-            botoes.forEach((botao) => {
-                botao.addEventListener('click', () => {
-                    if (
-                    +pontosJogador.innerHTML === 7 ||
-                    +pontosComputador.innerHTML === 7
-                    ) {
-                    pontosJogador.innerHTML = 0;
-                    pontosComputador.innerHTML = 0;
-                    }
-                    if (resultado.innerHTML === 'jogador venceu') {
-                    pJogador += 1;
-                    } else if (resultado.innerHTML === 'computador venceu') {
-                    pComputador += 1;
-                    }
-                    pontosJogador.innerHTML = pJogador;
-                    pontosComputador.innerHTML = pComputador;
-                });
+          botoes.forEach((botao) => {
+            botao.addEventListener('click', () => {
+                if (
+                +pontosJogador.innerHTML === 7 ||
+                +pontosComputador.innerHTML === 7
+                ) {
+                pontosJogador.innerHTML = 0;
+                pontosComputador.innerHTML = 0;
+                }
+                if (resultado.innerHTML === 'jogador venceu') {
+                pJogador += 1;
+                } else if (resultado.innerHTML === 'computador venceu') {
+                pComputador += 1;
+                }
+                pontosJogador.innerHTML = pJogador;
+                pontosComputador.innerHTML = pComputador;
             });
+          });
         }
 
         function fimJogo() {
             botoes.forEach((botao) => {
-                botao.addEventListener('click', () => {
-                    if (
-                    +pontosJogador.innerHTML === 7 ||
-                    +pontosComputador.innerHTML === 7
-                    ) {
-                    pJogador = 0;
-                    pComputador = 0;
-                    let mensagemFinal = 'Fim de jogo!';
-                    if (+pontosJogador.innerHTML === 7) {
-                        pontosJogador.innerHTML = 7;
-                        alert((mensagemFinal += '\nJogador é o vencedor!!'));
-                    } else if (+pontosComputador.innerHTML === 7) {
-                        pontosComputador.innerHTML = 7;
-                        alert((mensagemFinal += '\nComputador é o vencedor!!'));
-                    }
-                    }
-                });
+              botao.addEventListener('click', () => {
+                if (
+                +pontosJogador.innerHTML === 7 ||
+                +pontosComputador.innerHTML === 7
+                ) {
+                pJogador = 0;
+                pComputador = 0;
+                let mensagemFinal = 'Fim de jogo!';
+                if (+pontosJogador.innerHTML === 7) {
+                    pontosJogador.innerHTML = 7;
+                    alert((mensagemFinal += '\nJogador é o vencedor!!'));
+                } else if (+pontosComputador.innerHTML === 7) {
+                    pontosComputador.innerHTML = 7;
+                    alert((mensagemFinal += '\nComputador é o vencedor!!'));
+                  }
+                }
             });
+          });
         }
-
+        
         jogadaJogador();
         jogadaComputador();
         validarJogadas();
         compararJogadas();
         contadorPontos();
-        fimJogo();
-            
+        fimJogo();          
     </script>
 </body>
 
