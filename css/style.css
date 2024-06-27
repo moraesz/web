@@ -15,7 +15,7 @@ body, .bg-dark{
   font-weight: bold;
   padding: 14px .8rem;  
 }
-.container-fluid {
+.navbar {
   border-bottom: #242222 4px solid;
 }
 section {
