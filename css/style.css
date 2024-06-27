@@ -8,6 +8,11 @@ body, .bg-dark{
   background-color: #1f2120 !important;
   color: #fff;  
 }
+/* body, .bg-light{
+  background-color: #e3e3e1 !important;
+  color: #000;
+} */
+/* #281345 escuro, #e3e3e1 claro */
 .bg-black {
   background-color: #000;
 }
