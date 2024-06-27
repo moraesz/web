@@ -22,7 +22,7 @@
           <button class="btn inicio" id="pedra">Pedra</button>
           <button class="btn" id="papel">Papel</button>
           <button class="btn" id="tesoura">Tesoura</button>
-          <button class="voltar"><a href="./index.html">Voltar</a></button>          
+          <button class="voltar"><a href="./index.html">Voltar</a></button>
       </div>
   </div>
   <style>
@@ -64,6 +64,12 @@
         cursor: pointer;       
     }
     .voltar{
+      min-width: 98px;
+      padding: 11px 9px;
+      border: 1px solid #000;
+      color: #fff;
+      font-weight: bold;  
+      cursor: pointer; 
       background-color: #eb9234 !important; 
     }
     a{
@@ -76,7 +82,7 @@
         background-image: none;
       }
       .container{
-        max-height: 100vh;
+        margin: 0;        
       }
       .main-box {
         padding: 0 10px;             
