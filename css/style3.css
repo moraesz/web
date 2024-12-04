@@ -1,0 +1,56 @@
+body,
+section,
+div,
+h1,
+header {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #1f2120;
+  color: #fff;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+.container {
+  display: flex;
+  margin: 0 auto;
+}
+/* Menu */
+.menu-bg {
+  background-color: #000;
+}
+.menu {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  padding: 15px 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu a {
+  color: #fff;
+}
+.menu-logo a {
+  font-size: 2.2em;
+  font-weight: bold;
+  margin: 0 10px;
+}
+.menu-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+.menu-nav a {
+  font-size: 1.25em;
+  display: block;
+  padding: 15px;
+}
+.menu-nav a:hover {
+  color: #2b8772;
+  text-decoration: none;
+  transition: 0.5s;
+}
