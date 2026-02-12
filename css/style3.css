@@ -17,6 +17,7 @@ body {
 .container {
   display: flex;
   margin: 0 auto;
+  background-color: ;
 }
 /* Menu */
 .menu-bg {

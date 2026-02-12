@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic+Guides&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="conteudo">
+        <h1>Oi, Mariana!!</h1>
+        <button
+          onclick="mudarCor('#f2f5a2')"
+          style="background-color: yellow; border-radius: 10px 0 0 10px"
+        >
+          Amarelo
+        </button>
+        <button onclick="mudarCor('#e84343')" style="background-color: red">
+          Vermelho
+        </button>
+        <button
+          onclick="mudarCor('lightgreen')"
+          style="background-color: lightgreen"
+        >
+          Verde
+        </button>
+        <button
+          onclick="mudarCor('#338ee8')"
+          style="background-color: lightblue"
+        >
+          Azul
+        </button>
+        <button onclick="mudarCor('#f096fa')" style="background-color: pink">
+          Rosa
+        </button>
+        <button
+          onclick="mudarCor('#8f4ddb')"
+          style="background-color: purple; border-radius: 0 5px 5px 0"
+        >
+          Roxo
+        </button>
+      </div>
+    </div>
+
+    <style>
+      body {
+        background-color: #f2c4ef;
+        font-family: "Playwrite NZ Basic Guides", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+      h1 {
+        font-size: 7em;
+      }
+      button {
+        height: 2.3em;
+        min-width: 11em;
+        padding: 5px;
+        border: 1px solid black;
+        font-size: 1em;
+      }
+      .container {
+        display: flex;
+        justify-content: center; /* Centraliza na horizontal */
+        align-items: center; /* Centraliza na vertical */
+        height: 100vh; /* Ocupa toda a altura da tela */
+        text-align: center;
+      }
+    </style>
+
+    <script>
+      function mudarCor(cor) {
+        document.body.style.backgroundColor = cor;
+      }
+    </script>
+  </body>
+</html>
